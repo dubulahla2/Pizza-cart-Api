@@ -62,10 +62,8 @@ document.addEventListener('alpine:init', () => {
       pizzaImage(pizza) {
         return `./img/${pizza.size}.png`
       },
-      // pizzaColor(pizza) {
-      //   if(pizza.size ==small)
-      //   return 
-      // },
+
+     
             
  
 

@@ -18,23 +18,24 @@
     <div class="header box1">
       <h2 class="message" x-text='message'></h2>
 
-      <h2>Pizzas you can order</h2>
-      <h2 x-text="cartId"></h2>
+      <div class="order">
+        Order Code: <strong x-text="cartId"></strong>
+      </div>
 
-
-      <div class = "input">
-        Who is buying the pizzas:<input type="text" x-model="username" placeholder="enter your name">
+      <div class="input">
+        Customer Name:<input type="text" x-model="username" placeholder="enter your name">
       </div>
 
 
-      <strong x-text="pizzas.length"></strong>
+      <!-- <strong x-text="pizzas.length"></strong> -->
 
 
 
-      <div>
+      <div class="position">
         Cart total: R <strong x-text="cart.total.toFixed(2)"> </strong>
       </div>
     </div>
+
     <div class="cart-box">
       <div class="cart box2">
         <table>
@@ -44,44 +45,44 @@
             <th>Add or cancel order</th>
             <th>Qty</th>
             <th>Total</th>
-            </tr>
-           <template x-for="pizza in cart.pizzas">
-            <tr>
-
-            <td x-text="pizza.flavour"></td>
-            <td x-text="pizza.size"></td>
-            <td><button x-on:click="add(pizza)">+</button>
-              <button x-on:click="remove(pizza)">-</button>
-            </td>
-            <td x-text="pizza.qty"></td>
-            <td x-text="pizza.total"></td>
           </tr>
+          <template x-for="pizza in cart.pizzas ">
+            <tr>
+              <div x-show="$store.cart.total(index)  0">
+                <td x-text="pizza.flavour"></td>
+                <td x-text="pizza.size"></td>
+                <td><button x-on:click="add(pizza)">+</button>
+                  <button x-on:click="remove(pizza)">-</button>
+                </td>
+                <td x-text="pizza.qty"></td>
+                <td x-text="pizza.total"></td>
+            </tr>
 
           </template>
-           <tr>
-          <td colspan="4">
-            <div x-show="payNow">
-              <div class="message" x-text="paymentMessage"></div>
-              <div>
-                <label for="input">Payment Amount</label>
-                <input class="input" type="number" placeholder="Payment Amount" x-model="paymentAmount" width=" 50">
-                <button x-on:click="pay" class="btn">
-                  <img src="delivery.gif" width="20" alt="">
-                  Pay Now</button>
-              </div>
+          <tr>
+            <td colspan="4">
+              <div x-show="payNow">
+                <div class="message" x-text="paymentMessage"></div>
+                <div>
+                  <label for="input">Payment Amount</label>
+                  <input class="input" type="number" placeholder="Payment Amount" x-model="paymentAmount" width=" 50">
+                  <button x-on:click="pay" class="btn">
+                    <img src="delivery.gif" width="20" alt="">
+                    Pay Now</button>
+                </div>
 
 
               </div>
 
-              </td>
+            </td>
             <td>
-               <button x-show="!payNow" x-on:click="payNow =true" x-show class="btn">
-              <img src="delivery.gif" width="20" alt="">
-              Pay</button>
+              <button x-show="!payNow" x-on:click="payNow =true" class="btn">
+                <img src="delivery.gif" width="20" alt="">
+                Pay</button>
             </td>
           </tr>
         </table>
-     </div>
+      </div>
     </div>
 
 
@@ -102,7 +103,7 @@
           </div>
           <button x-on:click="add(pizza)">Buy</button>
 
-          <div x-text="pizza.featured = true"></div>
+          <div x-text="pizza.featured"></div>
 
         </div>
 
@@ -113,9 +114,11 @@
 
   <br>
   <div class="pizzaList box4">
-    <table>
+    <table class="gfg">
       <template x-for="pizza in pizzas">
+
         <tr>
+
           <td><img x-bind:src=" pizzaImage(pizza)" alt="" width="50"></td>
           <td x-text="pizza.flavour"></td>
           <td x-text="pizza.size"></td>
@@ -127,9 +130,12 @@
         </tr>
         <br>
       </template>
-      
+
     </table>
   </div>
+
+  </div>
+
 
   </div>
 

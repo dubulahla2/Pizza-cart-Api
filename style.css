@@ -10,7 +10,7 @@
    table {
     /* border-collapse: collapse; */
     width: 100%;
-    background-color: #1982c4;
+    /* background-color: #1982c4; */
 }
 td {
     text-align: center;
@@ -22,11 +22,14 @@ th,
 td {
     padding: 15px;
     text-align: left;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
 
 }
 td large.pizza{
   background-color: orangered !important;
+}
+tr{
+  background-color: greenyellow;
 }
 @media(min-width: 768px) {
     /* .Pizzas{
@@ -34,7 +37,7 @@ td large.pizza{
     } */
 
     body {
-      /* background-color: #1982c4; */
+      background-color: #1982c4;
     }
     /* .container{
         display: flex;
@@ -79,22 +82,24 @@ td large.pizza{
   padding: 1em;
   margin: 1em;
   background-color:white;
+  width:25%;
 }
 /* .body{
   margin-left: 25%;
   margin-right: 25%;
 } */
 .box1{
-  border: 1px solid;
+  /* border: 1px solid; */
   margin: 1em;
   padding: 1em;
   /* border-radius: 1em; */
-  background-color:yellowgreen ;
+  background-color: yellow ;
   opacity:0,5;
 }
 .cart-box {
   display: flex;
   justify-content: flex-end;
+  background-color: #1982c4;
 }
 .input>label {
   /* background-color: orangered; */
@@ -102,6 +107,7 @@ td large.pizza{
   width: 15em;
   padding: 1em;
   font-weight: bold;
+  margin: 1em;
 }
 
 .input>input[type="text"] {
@@ -112,3 +118,25 @@ td large.pizza{
   margin: 1em;
   /* font-weight: bold; */
 }
+.gfg {
+  border-collapse:separate;
+  border-spacing:0 15px;
+
+    
+}
+
+  .position{
+    margin-left: 88%;  }
+  .order{
+    padding: 2em;
+  }
+  .input{
+    padding: 2em;
+  }
+  .box4{
+    margin-left:20px;
+    margin-right: 20px;
+  }
+  .Hlanganani{
+    background-color:blueviolet !important;
+  }
